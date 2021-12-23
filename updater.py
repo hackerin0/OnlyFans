@@ -6,7 +6,7 @@ from pathlib import Path
 import shutil
 import time
 
-# API request limit is around 30, so it fails
+# API request limit is around 30, so it fails :(
 # local_commit = "2ca95beec5dd526b9b825497dc6227aafbaf67ad"
 # response = requests.get("https://api.github.com/repos/digitalcriminal/onlyfans/branches/master")
 # response_json = response.json()
@@ -21,6 +21,7 @@ content = io.BytesIO(downloaded.content)
 # with open(download_path, "wb") as f:
 #     f.write(downloaded.content)
 with ZipFile(content, "r") as zipObject:
+
     listOfFileNames = zipObject.namelist()
     root = listOfFileNames[0]
     zipObject.extractall()
